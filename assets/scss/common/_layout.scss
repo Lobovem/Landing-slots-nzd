@@ -1,0 +1,22 @@
+@use "../presets" as *;
+@use "../mixins" as *;
+
+
+.layout {
+  &__main {
+    width: min(100% - 80px, 1640px);
+
+    @include md {
+      width: min(100% - 40px, 1640px);
+    }
+    margin-inline: auto;
+
+    &--alt {
+      margin-top: -170px;
+
+      @include lg {
+        margin-top: 0;
+      }
+    }
+  }
+}

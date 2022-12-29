@@ -1,0 +1,109 @@
+@use "../presets" as *;
+@use "../mixins" as *;
+
+.item {
+  &__wrap {
+    position: relative;
+    z-index: 6;
+
+    display: grid;
+
+    margin-bottom: 74px;
+
+    gap: $gap;
+    grid-template-columns: repeat(4, 1fr);
+    @include xl {
+      margin-bottom: 16px;
+    }
+    @include lg {
+      margin-bottom: 74px;
+      padding-top: 40px;
+
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include sm {
+      margin-bottom: 94px;
+    }
+    @include xx {
+      margin-bottom: 40px;
+      padding-top: 20px;
+
+      gap: $gap-sm;
+    }
+  }
+
+  &__box-first {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    height: 100%;
+  }
+
+  &__box-second {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+    height: 100%;
+  }
+
+  &__box {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    min-height: 320px;
+    padding: 10px 10px 10px 10px;
+
+    gap: $gap-xl;
+    @include xl {
+      min-height: 280px;
+
+      gap: 34px;
+    }
+    @include sm {
+      min-height: 180px;
+
+      gap: $gap;
+    }
+    @include xx {
+      min-height: 138px;
+    }
+  }
+
+  &__img {
+    display: flex;
+
+    max-width: 80px;
+
+    @include xx {
+      max-width: 45px;
+    }
+  }
+
+  &__title {
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    color: $color-white;
+
+    font-family: $font-family-Oswald;
+    font-size: $font-size-40;
+    font-weight: $font-weight-600;
+    line-height: 100%;
+
+    @include xl {
+      font-size: $font-size-32;
+      line-height: 150%;
+    }
+    @include sm {
+      font-size: $font-size-24;
+      line-height: 100%;
+    }
+    @include xx {
+      font-size: $font-size-18;
+    }
+  }
+}

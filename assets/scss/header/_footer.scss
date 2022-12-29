@@ -1,0 +1,60 @@
+@use "../presets" as *;
+@use "../mixins" as *;
+
+.footer {
+  &__wrap {
+    display: flex;
+    align-items: center;
+
+    padding-top: 30px;
+    padding-bottom: 110px;
+
+    gap: 70px;
+    @include xl {
+      padding-bottom: 30px;
+
+      gap: 45px;
+    }
+    @include lg {
+      flex-direction: column;
+
+      padding-top: 54px;
+      padding-bottom: 50px;
+
+      gap: $gap;
+    }
+    @include sm {
+      padding-top: 54px;
+      padding-bottom: 30px;
+
+      gap: $gap-lg;
+    }
+  }
+
+  &__img {
+    max-width: 170px;
+  }
+
+  &__decs {
+    letter-spacing: 0.05em;
+
+    color: #6d6d71;
+
+    font-family: $font-family-Inter;
+    font-size: $font-size-16;
+    font-weight: $font-weight-400;
+    line-height: 160%;
+
+    @include lg {
+      order: 0;
+
+      text-align: center;
+    }
+    @include md {
+      font-size: $font-size-12;
+    }
+    @include sm {
+      text-align: left;
+    }
+  }
+}
